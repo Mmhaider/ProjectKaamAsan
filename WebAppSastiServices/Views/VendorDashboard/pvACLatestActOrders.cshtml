@@ -1,0 +1,23 @@
+﻿@model IEnumerable<WebAppSastiServices.Models.DB.STPOrder>
+
+@{
+    Layout = null;
+}
+
+
+
+
+@foreach (var item in Model)
+{
+    <div class="todo-list">
+
+        <div class="todo-item">
+            <span>@item.STPServiceType.ServiceTypeName</span>
+            <a href="#!" class="float-right remove-todo-item"></a>
+            <div class="btn-group float-right">
+                <a href="#" class="btn btn-success"><i class="fas fa-check-double"></i>Avail</a>
+                <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
+            </div>
+        </div>
+    </div>
+}
