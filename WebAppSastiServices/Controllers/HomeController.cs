@@ -18,7 +18,7 @@ namespace WebAppSastiServices.Controllers
         // GET: Home
 
 
-    [HttpGet]
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
@@ -27,17 +27,17 @@ namespace WebAppSastiServices.Controllers
         {
             return PartialView();
         }
-        
+
         public PartialViewResult pvQuickCall()
         {
             return PartialView();
         }
 
         [HttpPost]
-        public RedirectResult pvQuickCall(string Name,String Contact)
+        public RedirectResult pvQuickCall(string Name, String Contact)
         {
 
-            STPQuickCall Qcall = new STPQuickCall() 
+            STPQuickCall Qcall = new STPQuickCall()
             {
                 Name = Name,
                 Contact = Contact
@@ -49,7 +49,7 @@ namespace WebAppSastiServices.Controllers
             return Redirect(Url.Action("Index", "Home"));
         }
 
-        
+
         public ActionResult CustomerOrder(int? serviceTypeId)
         {
             ViewBag.ServiceType = new SelectList(db.STPServiceTypes.Where(s => s.ID == serviceTypeId), "ID", "ServiceTypeName");
@@ -316,5 +316,10 @@ namespace WebAppSastiServices.Controllers
 
         }
 
+        //NEW CHANGE 
+        public ActionResult PVProducts()
+        {
+            return View();
+        }
     }
 }
